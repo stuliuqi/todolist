@@ -1,0 +1,29 @@
+/**index.wxss**/
+
+
+
+
+
+.addTask{
+
+  width: 128rpx;
+  
+  height:120rpx;
+  
+  top:90%;
+
+  position:fixed;
+
+  left:40%;
+
+  
+}
+.type{
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px; 
+  position:absolute; 
+  bottom:5rpx;
+  left:330rpx;
+  background:red;
+}

@@ -1,0 +1,50 @@
+<!--index.wxml-->
+
+
+ <view class="weui-cells__title">待完成的事项</view>
+        <view class="weui-cells weui-cells_after-title" wx:for="{{task}}" wx:key="value" wx:for-index="index">
+            <radio-group bindchange="statusChange" >
+                <label wx:if="{{!item.status}}" class="weui-cell weui-check__label" >
+                    <radio class="weui-check" value="{{index}}" checked="{{item.status}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-radio">
+                      <icon class="weui-icon-radio_circle" type="circle" size="23" wx:if="{{!item.status}}"></icon>
+                       
+                    </view>
+                    <view wx:if="{{!item.status}}" class="weui-cell__bd" >{{item.name}}</view>
+                   
+                    <button wx:if="{{!item.status}}" class="weui-btn" bindtap="tasks"  id="{{index}}">详情</button>
+
+                    <button wx:if="{{!item.status}}"class="weui-btn" bindtap="delete"  id="{{index}}" type="warn">删除</button>
+                </label>
+                
+            </radio-group>
+            
+
+        </view>
+
+
+ <view class="weui-cells__title">已完成的事项</view>
+        <view class="weui-cells weui-cells_after-title"  wx:for="{{task}}" wx:key="value" wx:for-index="index">
+            <radio-group bindchange="statusChange">
+                <label wx:if="{{item.status}}"  class="weui-cell weui-check__label">
+                    <radio class="weui-check" value="{{index}}" checked="{{!item.status}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-radio">
+
+                      <icon class="weui-icon-radio_success" type="success" size="23" wx:if="{{item.status}}"></icon>
+                    
+                    </view>
+                    
+                    <view wx:if="{{item.status}}"class="weui-cell__bd" >{{item.name}}</view>
+
+                  <button wx:if="{{item.status}}" class="weui-btn " bindtap="tasks"  id="{{index}}">详情</button>
+
+                    <button wx:if="{{item.status}}" class="weui-btn " bindtap="delete"  id="{{index}}" type="warn">删除</button>
+                </label>
+            </radio-group>
+        </view>
+<view>
+<button class="addTask" bindtap="add" class="type" >+</button>
+</view>
+

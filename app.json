@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/todo",
+    "pages/index/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "todolist",
+    "navigationBarTextStyle": "black"
+  }
+}
